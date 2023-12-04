@@ -14,10 +14,11 @@ Hospital Management System
 
 ### Login Details
 - for admin : 
-admin<br>Test@12345
+admin@gmail.com<br>Test@12345
 
-- for Patient: 
-johndoe12@test.com<br>Test@123 
+- for User: 
+u_peter@gmail.com<br>Test@123 
 
 - for Doctor: 
-anujk123@test.com<br>Test@123 
+d_kasun@gmail.com<br>Test@123 <br>
+d_lahiru@gmail.com<br>Test@123 
