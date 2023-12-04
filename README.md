@@ -13,11 +13,11 @@ Hospital Management System
 
 
 ### Login Details
-- for admin : <br>
-admin/Test@12345
+- for admin : 
+admin<br>Test@12345
 
 - for Patient: 
-johndoe12@test.com/Test@123 <br>
+johndoe12@test.com<br>Test@123 
 
 - for Doctor: 
-anujk123@test.com/Test@123 <br>
+anujk123@test.com<br>Test@123 
