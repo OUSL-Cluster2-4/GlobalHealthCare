@@ -88,7 +88,7 @@ if (isset($_POST['submit'])) {
                         <div class="blog-single">
                             <img src="assets/images/doctor.jpg" alt="">
                             <div class="blog-single-det">
-                                <h6>Doctors login</h6>
+                                <h6>Doctor login</h6>
                                 <a href="ghc/doctor" target="_blank">
                                     <button class="btn btn-success btn-sm">Click Here</button>
                                 </a>
@@ -99,7 +99,7 @@ if (isset($_POST['submit'])) {
                         <div class="blog-single">
                             <img src="assets/images/patient.jpg" alt="">
                             <div class="blog-single-det">
-                                <h6>Patient Login</h6>
+                                <h6>User Login</h6>
                                 <a href="ghc/user-login.php" target="_blank">
                                     <button class="btn btn-success btn-sm">Click Here</button>
                                 </a>

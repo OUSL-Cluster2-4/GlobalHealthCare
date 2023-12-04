@@ -24,14 +24,9 @@
 								<li  style="padding-top:2% ">
 								<h2>Hospital Management System</h2>
 							</li>
-						
-						
 							<li class="dropdown current-user">
 								<a href class="dropdown-toggle" data-toggle="dropdown">
 									<img src="assets/images/images.jpg"> <span class="username">
-
-
-
 									<?php $query=mysqli_query($con,"select fullName from users where id='".$_SESSION['id']."'");
 while($row=mysqli_fetch_array($query))
 {
@@ -45,7 +40,6 @@ while($row=mysqli_fetch_array($query))
 											My Profile
 										</a>
 									</li>
-								
 									<li>
 										<a href="change-password.php">
 											Change Password
@@ -67,7 +61,5 @@ while($row=mysqli_fetch_array($query))
 						</div>
 						<!-- end: MENU TOGGLER FOR MOBILE DEVICES -->
 					</div>
-				
-					
 					<!-- end: NAVBAR COLLAPSE -->
 				</header>
