@@ -1,2 +1,2 @@
-cd C:\xampp\htdocs\Free Template\free-clinic-website-template-bbotstrap\assets
+cd C:\xampp\htdocs\GlobalHealthCAre\assets
 scss --watch scss/style.scss:css/style.css
