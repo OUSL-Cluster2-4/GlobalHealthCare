@@ -36,8 +36,8 @@ if (isset($_POST['submit'])) {
                         <ul>
                             <li><a href="#">Home</a></li>
                             <li><a href="#services">Services</a></li>
-                            <li><a href="#about_us">About Us</a></li>
                             <li><a href="#gallery">Gallery</a></li>
+                            <li><a href="#about_us">About Us</a></li>
                             <li><a href="#contact_us">Contact Us</a></li>
                             <li><a href="#logins">Logins</a></li>
                         </ul>
@@ -226,11 +226,11 @@ if (isset($_POST['submit'])) {
                             <div class="col-sm-8"><input type="text" name="emailid" placeholder="Enter Email Address" class="form-control input-sm" required></div>
                         </div>
                         <div class="row cf-ro">
-                            <div class="col-sm-3"><label>Mobile Number:</label></div>
+                            <div class="col-sm-3"><label>Mobile Number :</label></div>
                             <div class="col-sm-8"><input type="text" name="mobileno" placeholder="Enter Mobile Number" class="form-control input-sm" required></div>
                         </div>
                         <div class="row cf-ro">
-                            <div class="col-sm-3"><label>Enter Message:</label></div>
+                            <div class="col-sm-3"><label>Enter Message :</label></div>
                             <div class="col-sm-8">
                                 <textarea rows="5" placeholder="Enter Your Message" class="form-control input-sm" name="description" required></textarea>
                             </div>
