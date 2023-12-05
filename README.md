@@ -11,7 +11,6 @@ Hospital Management System
 6. Import ghc.sql file(given inside the zip package in SQL file folder)
 7. Run the script http://localhost/GlobalHealthCare
 
-
 ### Login Details
 - for admin : <br>
 admin@gmail.com<br>Test@123
