@@ -10,7 +10,7 @@ if (isset($_POST['submit'])) {
 	if ($num > 0) {
 		$_SESSION['login'] = $_POST['username'];
 		$_SESSION['id'] = $num['id'];
-		header("location:dashboard.php");
+		header("location:home-dashboard.php");
 	} else {
 		$_SESSION['errmsg'] = "Invalid Username or Password";
 	}

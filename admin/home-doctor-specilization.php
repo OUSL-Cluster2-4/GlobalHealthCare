@@ -3,7 +3,7 @@ session_start();
 error_reporting(0);
 include('include/config.php');
 if (strlen($_SESSION['id'] == 0)) {
-	header('location:logout.php');
+	header('location:func-logout.php');
 } else {
 	if (isset($_POST['submit'])) {
 		$doctorspecilization = $_POST['doctorspecilization'];
@@ -106,8 +106,8 @@ if (strlen($_SESSION['id'] == 0)) {
 													</td>
 													<td>
 														<div class="visible-md visible-lg hidden-sm hidden-xs">
-															<a href="edit-doctor-specialization.php?id=<?php echo $row['id']; ?>" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
-															<a href="doctor-specilization.php?id=<?php echo $row['id'] ?>&del=delete" onClick="return confirm('Are you sure you want to delete?')" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
+															<a href="edit-doctor_specialization.php?id=<?php echo $row['id']; ?>" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
+															<a href="home-doctor-specilization.php?id=<?php echo $row['id'] ?>&del=delete" onClick="return confirm('Are you sure you want to delete?')" class="btn btn-transparent btn-xs tooltips" tooltip-placement="top" tooltip="Remove"><i class="fa fa-times fa fa-white"></i></a>
 														</div>
 														<div class="visible-xs visible-sm hidden-md hidden-lg">
 															<div class="btn-group" dropdown is-open="status.isopen">

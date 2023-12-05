@@ -4,7 +4,7 @@
 			<!-- start: MAIN NAVIGATION MENU -->
 			<ul class="main-navigation-menu">
 				<li>
-					<a href="dashboard.php">
+					<a href="home-dashboard.php">
 						<div class="item-content">
 							<div class="item-media">
 								<i class="ti-home"></i>
@@ -28,7 +28,7 @@
 					</a>
 					<ul class="sub-menu">
 						<li>
-							<a href="doctor-specilization.php">
+							<a href="home-doctor-specilization.php">
 								<span class="title"> Doctor Specialization </span>
 							</a>
 						</li>
@@ -83,7 +83,7 @@
 					</ul>
 				</li>
 				<li>
-					<a href="appointment-history.php">
+					<a href="home-appointment_history.php">
 						<div class="item-content">
 							<div class="item-media">
 								<i class="ti-file"></i>
@@ -96,7 +96,7 @@
 				</li>
 				<!--- Pages---->
 				<li>
-					<a href="patient-search.php">
+					<a href="search-patient.php">
 						<div class="item-content">
 							<div class="item-media">
 								<i class="ti-search"></i>

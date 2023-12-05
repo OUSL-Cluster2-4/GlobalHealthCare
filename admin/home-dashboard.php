@@ -3,7 +3,7 @@ session_start();
 error_reporting(0);
 include('include/config.php');
 if (strlen($_SESSION['id'] == 0)) {
-	header('location:logout.php');
+	header('location:func-logout.php');
 } else {
 ?>
 	<!DOCTYPE html>
@@ -88,7 +88,7 @@ if (strlen($_SESSION['id'] == 0)) {
 											<h2 class="StepTitle" style="font-weight:600">Appointments</h2>
 											<p class="links cl-effect-1">
 												<a href="book-appointment.php">
-													<a href="appointment-history.php">
+													<a href="home-appointment_history.php">
 														<?php $sql = mysqli_query($con, "SELECT * FROM appointment");
 														$num_rows2 = mysqli_num_rows($sql); {
 														?>
@@ -123,7 +123,7 @@ if (strlen($_SESSION['id'] == 0)) {
 											<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-graduation-cap fa-stack-1x fa-inverse"></i> </span>
 											<h2 class="StepTitle" style="font-weight:600">Specialization</h2>
 											<p class="links cl-effect-1">
-												<a href="doctor-specilization.php">
+												<a href="home-doctor-specilization.php">
 													<?php $result = mysqli_query($con, "SELECT * FROM doctorspecilization ");
 													$num_rows3 = mysqli_num_rows($result); {
 													?>

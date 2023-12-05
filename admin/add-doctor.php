@@ -3,7 +3,7 @@ session_start();
 error_reporting(0);
 include('include/config.php');
 if (strlen($_SESSION['id'] == 0)) {
-	header('location:logout.php');
+	header('location:func-logout.php');
 } else {
 	if (isset($_POST['submit'])) {
 		$docspecialization = $_POST['Doctorspecialization'];
@@ -53,7 +53,7 @@ if (strlen($_SESSION['id'] == 0)) {
 			function checkemailAvailability() {
 				$("#loaderIcon").show();
 				jQuery.ajax({
-					url: "check_availability.php",
+					url: "fun_check_availability.php",
 					data: 'emailid=' + $("#docemail").val(),
 					type: "POST",
 					success: function(data) {

@@ -1,2 +1,2 @@
-cd C:\xampp\htdocs\GlobalHealthCare2\assets
+cd C:\xampp\htdocs\GlobalHealthCare\assets
 scss --watch scss/style.scss:css/style.css
