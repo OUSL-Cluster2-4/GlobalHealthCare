@@ -3,7 +3,7 @@ session_start();
 error_reporting(0);
 include('include/config.php');
 if (strlen($_SESSION['id'] == 0)) {
-	header('location:logout.php');
+	header('location:func-logout.php');
 } else {
 	if (isset($_GET['cancel'])) {
 		mysqli_query($con, "update appointment set userStatus='0' where id = '" . $_GET['id'] . "'");
@@ -14,7 +14,7 @@ if (strlen($_SESSION['id'] == 0)) {
 	<html lang="en">
 
 	<head>
-		<title>User | Appointment History</title>
+		<title>Appointment History</title>
 		<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
@@ -96,7 +96,7 @@ if (strlen($_SESSION['id'] == 0)) {
 													<td>
 														<div class="visible-md visible-lg hidden-sm hidden-xs">
 															<?php if (($row['userStatus'] == 1) && ($row['doctorStatus'] == 1)) { ?>
-																<a href="appointment-history.php?id=<?php echo $row['id'] ?>&cancel=update" onClick="return confirm('Are you sure you want to cancel this appointment ?')" class="btn btn-transparent btn-xs tooltips" title="Cancel Appointment" tooltip-placement="top" tooltip="Remove">Cancel</a>
+																<a href="home-appointment_history.php?id=<?php echo $row['id'] ?>&cancel=update" onClick="return confirm('Are you sure you want to cancel this appointment ?')" class="btn btn-transparent btn-xs tooltips" title="Cancel Appointment" tooltip-placement="top" tooltip="Remove">Cancel</a>
 															<?php } else {
 																echo "Canceled";
 															} ?>

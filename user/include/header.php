@@ -45,7 +45,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="logout.php">
+						<a href="func-logout.php">
 							Logout
 						</a>
 					</li>

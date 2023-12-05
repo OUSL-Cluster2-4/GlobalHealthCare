@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
 		$status = 1;
 		// For stroing log if user login successfull
 		$log = mysqli_query($con, "insert into userlog(uid,username,userip,status) values('$pid','$puname','$uip','$status')");
-		header("location:dashboard.php");
+		header("location:home-dashboard.php");
 	} else {
 		// For stroing log if user login unsuccessfull
 		$_SESSION['login'] = $_POST['username'];

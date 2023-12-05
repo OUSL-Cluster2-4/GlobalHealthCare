@@ -4,7 +4,7 @@
 			<!-- start: MAIN NAVIGATION MENU -->
 			<ul class="main-navigation-menu">
 				<li>
-					<a href="dashboard.php">
+					<a href="home-dashboard.php">
 						<div class="item-content">
 							<div class="item-media">
 								<i class="ti-home"></i>
@@ -16,7 +16,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="book-appointment.php">
+					<a href="home-book_appointment.php">
 						<div class="item-content">
 							<div class="item-media">
 								<i class="ti-pencil-alt"></i>
@@ -28,7 +28,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="appointment-history.php">
+					<a href="home-appointment_history.php">
 						<div class="item-content">
 							<div class="item-media">
 								<i class="ti-list"></i>

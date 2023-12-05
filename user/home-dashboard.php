@@ -9,7 +9,7 @@ check_login();
 <html lang="en">
 
 <head>
-	<title>User | Dashboard</title>
+	<title>Dashboard</title>
 	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
@@ -65,7 +65,7 @@ check_login();
 										<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-paperclip fa-stack-1x fa-inverse"></i> </span>
 										<h2 class="StepTitle" style="font-weight:600">Appointments</h2>
 										<p class="cl-effect-1">
-											<a href="appointment-history.php">
+											<a href="home-appointment_history.php">
 												View Appointment History
 											</a>
 										</p>
@@ -78,7 +78,7 @@ check_login();
 										<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-terminal fa-stack-1x fa-inverse"></i> </span>
 										<h2 class="StepTitle" style="font-weight:600"> Book Now</h2>
 										<p class="links cl-effect-1">
-											<a href="book-appointment.php">
+											<a href="home-book_appointment.php">
 												Book Appointment Now
 											</a>
 										</p>

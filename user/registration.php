@@ -150,7 +150,7 @@ if (isset($_POST['submit'])) {
 		function userAvailability() {
 			$("#loaderIcon").show();
 			jQuery.ajax({
-				url: "check_availability.php",
+				url: "func-check_availability.php",
 				data: 'email=' + $("#email").val(),
 				type: "POST",
 				success: function(data) {
