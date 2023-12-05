@@ -10,7 +10,7 @@ if (strlen($_SESSION['id'] == 0)) {
 	<html lang="en">
 
 	<head>
-		<title>Admin | View Patients</title>
+		<title>Admin | Manage Patients</title>
 		<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
@@ -38,23 +38,21 @@ if (strlen($_SESSION['id'] == 0)) {
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle" style="color:#0063d9;font-weight:600">View Patients</h1>
+									<h1 class="mainTitle" style="font-weight:600">Manage Patients</h1>
 								</div>
 							</div>
 						</section>
 						<div class="container-fluid container-fullw bg-white">
 							<div class="row">
 								<div class="col-md-12">
-									<h5 class="over-title margin-bottom-15">View <span class="text-bold">Patients</span></h5>
+									<h5 class="over-title margin-bottom-15"><span class="text-bold">Available Patients</span></h5>
 									<table class="table table-hover" id="sample-table-1">
 										<thead>
 											<tr>
 												<th class="center">#</th>
-												<th>Patient Name</th>
-												<th>Patient Contact Number</th>
-												<th>Patient Gender </th>
-												<th>Creation Date </th>
-												<th>Updation Date </th>
+												<th>Name</th>
+												<th>Contact Number</th>
+												<th>Gender </th>
 												<th>Action</th>
 											</tr>
 										</thead>
@@ -69,8 +67,6 @@ if (strlen($_SESSION['id'] == 0)) {
 													<td class="hidden-xs"><?php echo $row['PatientName']; ?></td>
 													<td><?php echo $row['PatientContno']; ?></td>
 													<td><?php echo $row['PatientGender']; ?></td>
-													<td><?php echo $row['CreationDate']; ?></td>
-													<td><?php echo $row['UpdationDate']; ?>
 													</td>
 													<td>
 														<a href="view-patient.php?viewid=<?php echo $row['ID']; ?>"><i class="fa fa-eye"></i></a>

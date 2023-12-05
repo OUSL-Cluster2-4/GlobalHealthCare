@@ -9,13 +9,13 @@ if (strlen($_SESSION['id'] == 0)) {
 	if (isset($_POST['submit'])) {
 		$docspecialization = $_POST['Doctorspecialization'];
 		$docname = $_POST['docname'];
-		$docaddress = $_POST['clinicaddress'];
+		$docaddress = $_POST['address'];
 		$docfees = $_POST['docfees'];
 		$doccontactno = $_POST['doccontact'];
 		$docemail = $_POST['docemail'];
 		$sql = mysqli_query($con, "Update doctors set specilization='$docspecialization',doctorName='$docname',address='$docaddress',docFees='$docfees',contactno='$doccontactno',docEmail='$docemail' where id='$did'");
 		if ($sql) {
-			$msg = "Doctor Details updated Successfully";
+			$msg = "Doctor Details Updated Successfully!";
 		}
 	}
 ?>
@@ -51,7 +51,7 @@ if (strlen($_SESSION['id'] == 0)) {
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle" style="color:#0063d9;font-weight:600">Edit Doctor Details</h1>
+									<h1 class="mainTitle" style="font-weight:600">Edit Doctor Details</h1>
 								</div>
 							</div>
 						</section>
@@ -60,26 +60,18 @@ if (strlen($_SESSION['id'] == 0)) {
 						<div class="container-fluid container-fullw bg-white">
 							<div class="row">
 								<div class="col-md-12">
-									<h5 style="color: green; font-size:18px; ">
+									<p style="color: green;">
 										<?php if ($msg) {
 											echo htmlentities($msg);
-										} ?> </h5>
+										} ?> </p>
 									<div class="row margin-top-30">
 										<div class="col-lg-8 col-md-12">
 											<div class="panel panel-white">
-												<div class="panel-heading">
-													<h5 class="panel-title">Edit Doctor Info</h5>
-												</div>
 												<div class="panel-body">
 													<?php $sql = mysqli_query($con, "select * from doctors where id='$did'");
 													while ($data = mysqli_fetch_array($sql)) {
 													?>
-														<h4><?php echo htmlentities($data['doctorName']); ?>'s Profile</h4>
-														<p><b>Profile Reg. Date: </b><?php echo htmlentities($data['creationDate']); ?></p>
-														<?php if ($data['updationDate']) { ?>
-															<p><b>Profile Last Updation Date: </b><?php echo htmlentities($data['updationDate']); ?></p>
-														<?php } ?>
-														<hr />
+														<h4 style="font-weight:600;color:#0063d9;"><?php echo htmlentities($data['doctorName']); ?>'s Profile</h4>
 														<form role="form" name="adddoc" method="post" onSubmit="return valid();">
 															<div class="form-group">
 																<label for="DoctorSpecialization">
@@ -107,7 +99,7 @@ if (strlen($_SESSION['id'] == 0)) {
 																<label for="address">
 																	Doctor Clinic Address
 																</label>
-																<textarea name="clinicaddress" class="form-control"><?php echo htmlentities($data['address']); ?></textarea>
+																<textarea name="address" class="form-control"><?php echo htmlentities($data['address']); ?></textarea>
 															</div>
 															<div class="form-group">
 																<label for="fess">

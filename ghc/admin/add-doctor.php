@@ -8,14 +8,14 @@ if (strlen($_SESSION['id'] == 0)) {
 	if (isset($_POST['submit'])) {
 		$docspecialization = $_POST['Doctorspecialization'];
 		$docname = $_POST['docname'];
-		$docaddress = $_POST['clinicaddress'];
+		$docaddress = $_POST['address'];
 		$docfees = $_POST['docfees'];
 		$doccontactno = $_POST['doccontact'];
 		$docemail = $_POST['docemail'];
 		$password = md5($_POST['npass']);
 		$sql = mysqli_query($con, "insert into doctors(specilization,doctorName,address,docFees,contactno,docEmail,password) values('$docspecialization','$docname','$docaddress','$docfees','$doccontactno','$docemail','$password')");
 		if ($sql) {
-			echo "<script>alert('Doctor info added Successfully');</script>";
+			echo "<script>alert('Doctor Details Added Successfully!');</script>";
 			echo "<script>window.location.href ='manage-doctors.php'</script>";
 		}
 	}
@@ -78,7 +78,7 @@ if (strlen($_SESSION['id'] == 0)) {
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle" style="color:#0063d9;font-weight:600">Add Doctors</h1>
+									<h1 class="mainTitle" style="font-weight:600">Add Doctors</h1>
 								</div>
 							</div>
 						</section>
@@ -90,9 +90,6 @@ if (strlen($_SESSION['id'] == 0)) {
 									<div class="row margin-top-30">
 										<div class="col-lg-8 col-md-12">
 											<div class="panel panel-white">
-												<div class="panel-heading">
-													<h5 class="panel-title">Add Doctors</h5>
-												</div>
 												<div class="panel-body">
 													<form role="form" name="adddoc" method="post" onSubmit="return valid();">
 														<div class="form-group">
@@ -118,9 +115,9 @@ if (strlen($_SESSION['id'] == 0)) {
 														</div>
 														<div class="form-group">
 															<label for="address">
-																Doctor Clinic Address
+																Doctor Address
 															</label>
-															<textarea name="clinicaddress" class="form-control" placeholder="Enter Doctor Clinic Address" required="true"></textarea>
+															<textarea name="address" class="form-control" placeholder="Enter Doctor Address" required="true"></textarea>
 														</div>
 														<div class="form-group">
 															<label for="fess">
@@ -154,7 +151,7 @@ if (strlen($_SESSION['id'] == 0)) {
 															<input type="password" name="cfpass" class="form-control" placeholder="Enter Confirm Password" required="required">
 														</div>
 														<button type="submit" name="submit" id="submit" class="btn btn-o btn-primary">
-															Add 
+															Add Doctor
 														</button>
 													</form>
 												</div>

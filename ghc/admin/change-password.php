@@ -15,9 +15,9 @@ if (strlen($_SESSION['id'] == 0)) {
 		if ($num > 0) {
 			$npass = $_POST['npass'];
 			$con = mysqli_query($con, "update admin set password='$npass', updationDate='$currentTime' where username='$uname'");
-			$_SESSION['msg1'] = "Password Changed Successfully !!";
+			$_SESSION['msg1'] = "Password Changed Successfully!";
 		} else {
-			$_SESSION['msg1'] = "Old Password not match !!";
+			$_SESSION['msg1'] = "Old Password Not Matching!";
 		}
 	}
 ?>
@@ -83,7 +83,7 @@ if (strlen($_SESSION['id'] == 0)) {
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle" style="color:#0063d9;font-weight:600">Change Password</h1>
+									<h1 class="mainTitle" style="font-weight:600">Change Password</h1>
 								</div>
 							</div>
 						</section>
@@ -95,9 +95,6 @@ if (strlen($_SESSION['id'] == 0)) {
 									<div class="row margin-top-30">
 										<div class="col-lg-8 col-md-12">
 											<div class="panel panel-white">
-												<div class="panel-heading">
-													<h5 class="panel-title">Change Password</h5>
-												</div>
 												<div class="panel-body">
 													<p style="color:red;"><?php echo htmlentities($_SESSION['msg1']); ?>
 														<?php echo htmlentities($_SESSION['msg1'] = ""); ?></p>

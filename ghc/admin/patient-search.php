@@ -36,16 +36,8 @@ if (strlen($_SESSION['id'] == 0)) {
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle" style="color:#0063d9;font-weight:600">Search Patients</h1>
+									<h1 class="mainTitle" style="font-weight:600">Search Patients</h1>
 								</div>
-								<ol class="breadcrumb">
-									<li>
-										<span>Admin</span>
-									</li>
-									<li class="active">
-										<span>View Patients</span>
-									</li>
-								</ol>
 							</div>
 						</section>
 						<div class="container-fluid container-fullw bg-white">
@@ -53,10 +45,7 @@ if (strlen($_SESSION['id'] == 0)) {
 								<div class="col-md-12">
 									<form role="form" method="post" name="search">
 										<div class="form-group">
-											<label for="doctorname">
-												Search by Name/Mobile No.
-											</label>
-											<input type="text" name="searchdata" id="searchdata" class="form-control" value="" required='true'>
+											<input placeholder="Search by Name | Mobile Number" name="searchdata" id="searchdata" class="form-control" value="" required='true'>
 										</div>
 										<button type="submit" name="search" id="submit" class="btn btn-o btn-primary">
 											Search
@@ -74,8 +63,6 @@ if (strlen($_SESSION['id'] == 0)) {
 													<th>Patient Name</th>
 													<th>Patient Contact Number</th>
 													<th>Patient Gender </th>
-													<th>Creation Date </th>
-													<th>Updation Date </th>
 													<th>Action</th>
 												</tr>
 											</thead>
@@ -92,8 +79,6 @@ if (strlen($_SESSION['id'] == 0)) {
 															<td class="hidden-xs"><?php echo $row['PatientName']; ?></td>
 															<td><?php echo $row['PatientContno']; ?></td>
 															<td><?php echo $row['PatientGender']; ?></td>
-															<td><?php echo $row['CreationDate']; ?></td>
-															<td><?php echo $row['UpdationDate']; ?>
 															</td>
 															<td>
 																<a href="view-patient.php?viewid=<?php echo $row['ID']; ?>"><i class="fa fa-eye"></i></a>
@@ -104,7 +89,7 @@ if (strlen($_SESSION['id'] == 0)) {
 													}
 												} else { ?>
 													<tr>
-														<td colspan="8"> No record found against this search</td>
+														<td colspan="8"> No record Found Against This Search</td>
 													</tr>
 											<?php }
 											} ?>

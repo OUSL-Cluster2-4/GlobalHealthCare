@@ -14,10 +14,10 @@ if (strlen($_SESSION['id'] == 0)) {
 		$pres = $_POST['pres'];
 		$query .= mysqli_query($con, "insert   tblmedicalhistory(PatientID,BloodPressure,BloodSugar,Weight,Temperature,MedicalPres)value('$vid','$bp','$bs','$weight','$temp','$pres')");
 		if ($query) {
-			echo '<script>alert("Medicle history has been added.")</script>';
+			echo '<script>alert("Medicle History Added!")</script>';
 			echo "<script>window.location.href ='manage-patient.php'</script>";
 		} else {
-			echo '<script>alert("Something Went Wrong. Please try again")</script>';
+			echo '<script>alert("Something Went Wrong. Please Try Again")</script>';
 		}
 	}
 ?>
@@ -53,22 +53,14 @@ if (strlen($_SESSION['id'] == 0)) {
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle" style="color:#0063d9;font-weight:600">View Patient Details</h1>
+									<h1 class="mainTitle" style="font-weight:600">View Patient Details</h1>
 								</div>
-								<ol class="breadcrumb">
-									<li>
-										<span>Doctor</span>
-									</li>
-									<li class="active">
-										<span>Manage Patients</span>
-									</li>
-								</ol>
 							</div>
 						</section>
 						<div class="container-fluid container-fullw bg-white">
 							<div class="row">
 								<div class="col-md-12">
-									<h5 class="over-title margin-bottom-15">Manage <span class="text-bold">Patients</span></h5>
+									<h5 class="over-title margin-bottom-15"><span class="text-bold">Patient Details</span></h5>
 									<?php
 									$vid = $_GET['viewid'];
 									$ret = mysqli_query($con, "select * from tblpatient where ID='$vid'");
@@ -76,10 +68,6 @@ if (strlen($_SESSION['id'] == 0)) {
 									while ($row = mysqli_fetch_array($ret)) {
 									?>
 										<table border="1" class="table table-bordered">
-											<tr align="center">
-												<td colspan="4" style="font-size:20px;color:blue">
-													Patient Details</td>
-											</tr>
 											<tr>
 												<th scope>Patient Name</th>
 												<td><?php echo $row['PatientName']; ?></td>

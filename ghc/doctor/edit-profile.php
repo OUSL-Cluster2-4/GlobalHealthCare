@@ -9,7 +9,7 @@ if(isset($_POST['submit']))
 {
 	$docspecialization=$_POST['Doctorspecialization'];
 $docname=$_POST['docname'];
-$docaddress=$_POST['clinicaddress'];
+$docaddress=$_POST['address'];
 $docfees=$_POST['docfees'];
 $doccontactno=$_POST['doccontact'];
 $docemail=$_POST['docemail'];
@@ -123,7 +123,7 @@ while($row=mysqli_fetch_array($ret))
 															<label for="address">
 																 Doctor Clinic Address
 															</label>
-					<textarea name="clinicaddress" class="form-control"><?php echo htmlentities($data['address']);?></textarea>
+					<textarea name="address" class="form-control"><?php echo htmlentities($data['address']);?></textarea>
 														</div>
 <div class="form-group">
 															<label for="fess">

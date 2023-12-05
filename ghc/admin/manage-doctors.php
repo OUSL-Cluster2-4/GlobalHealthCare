@@ -8,7 +8,7 @@ if (strlen($_SESSION['id'] == 0)) {
 	if (isset($_GET['del'])) {
 		$docid = $_GET['id'];
 		mysqli_query($con, "delete from doctors where id ='$docid'");
-		$_SESSION['msg'] = "data deleted !!";
+		$_SESSION['msg'] = "Doctor Details Deleted Successfully!";
 	}
 ?>
 	<!DOCTYPE html>
@@ -42,7 +42,7 @@ if (strlen($_SESSION['id'] == 0)) {
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle" style="color:#0063d9;font-weight:600">Manage Doctors</h1>
+									<h1 class="mainTitle" style="font-weight:600">Manage Doctors</h1>
 								</div>
 							</div>
 						</section>
@@ -51,7 +51,7 @@ if (strlen($_SESSION['id'] == 0)) {
 						<div class="container-fluid container-fullw bg-white">
 							<div class="row">
 								<div class="col-md-12">
-									<h5 class="over-title margin-bottom-15">Manage <span class="text-bold">Doctors</span></h5>
+									<h5 class="over-title margin-bottom-15"> <span class="text-bold">Available Doctors</span></h5>
 									<p style="color:red;"><?php echo htmlentities($_SESSION['msg']); ?>
 										<?php echo htmlentities($_SESSION['msg'] = ""); ?></p>
 									<table class="table table-hover" id="sample-table-1">
@@ -59,8 +59,9 @@ if (strlen($_SESSION['id'] == 0)) {
 											<tr>
 												<th class="center">#</th>
 												<th>Specialization</th>
-												<th class="hidden-xs">Doctor Name</th>
-												<th>Creation Date </th>
+												<th class="hidden-xs">Name</th>
+												<th>Address</th>
+												<th>Contact Number</th>
 												<th>Action</th>
 											</tr>
 										</thead>
@@ -73,9 +74,9 @@ if (strlen($_SESSION['id'] == 0)) {
 												<tr>
 													<td class="center"><?php echo $cnt; ?>.</td>
 													<td class="hidden-xs"><?php echo $row['specilization']; ?></td>
-													<td><?php echo $row['doctorName']; ?></td>
-													<td><?php echo $row['creationDate']; ?>
-													</td>
+													<td><?php echo $row['doctorName']; ?></td></dt>
+													<td><?php echo $row['address']; ?></td>
+													<td><?php echo $row['contactno']; ?></td>
 													<td>
 														<div class="visible-md visible-lg hidden-sm hidden-xs">
 															<a href="edit-doctor.php?id=<?php echo $row['id']; ?>" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>
@@ -90,11 +91,6 @@ if (strlen($_SESSION['id'] == 0)) {
 																	<li>
 																		<a href="#">
 																			Edit
-																		</a>
-																	</li>
-																	<li>
-																		<a href="#">
-																			Share
 																		</a>
 																	</li>
 																	<li>

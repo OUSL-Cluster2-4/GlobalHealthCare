@@ -9,7 +9,7 @@ if (strlen($_SESSION['id'] == 0)) {
 	if (isset($_POST['submit'])) {
 		$docspecialization = $_POST['doctorspecilization'];
 		$sql = mysqli_query($con, "update  doctorSpecilization set specilization='$docspecialization' where id='$id'");
-		$_SESSION['msg'] = "Doctor Specialization updated successfully !!";
+		$_SESSION['msg'] = "Doctor Specialization updated successfully!";
 	}
 ?>
 	<!DOCTYPE html>
@@ -43,7 +43,7 @@ if (strlen($_SESSION['id'] == 0)) {
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle" style="color:#0063d9;font-weight:600">Edit Doctor Specialization</h1>
+									<h1 class="mainTitle" style="font-weight:600">Edit Doctor Specialization</h1>
 								</div>
 							</div>
 						</section>
@@ -55,9 +55,6 @@ if (strlen($_SESSION['id'] == 0)) {
 									<div class="row margin-top-30">
 										<div class="col-lg-6 col-md-12">
 											<div class="panel panel-white">
-												<div class="panel-heading">
-													<h5 class="panel-title">Edit Doctor Specialization</h5>
-												</div>
 												<div class="panel-body">
 													<p style="color:red;"><?php echo htmlentities($_SESSION['msg']); ?>
 														<?php echo htmlentities($_SESSION['msg'] = ""); ?></p>

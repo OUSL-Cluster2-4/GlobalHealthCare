@@ -39,7 +39,7 @@ if (strlen($_SESSION['id'] == 0)) {
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle" style="color:#0063d9;font-weight:600">Appointment History</h1>
+									<h1 class="mainTitle" style="font-weight:600">Appointment History</h1>
 								</div>
 							</div>
 						</section>
@@ -94,7 +94,7 @@ if (strlen($_SESSION['id'] == 0)) {
 													<td>
 														<div class="visible-md visible-lg hidden-sm hidden-xs">
 															<?php if (($row['userStatus'] == 1) && ($row['doctorStatus'] == 1)) {
-																echo "No Action yet";
+																echo "Pending";
 															} else {
 																echo "Canceled";
 															} ?>
@@ -108,11 +108,6 @@ if (strlen($_SESSION['id'] == 0)) {
 																	<li>
 																		<a href="#">
 																			Edit
-																		</a>
-																	</li>
-																	<li>
-																		<a href="#">
-																			Share
 																		</a>
 																	</li>
 																	<li>
