@@ -42,7 +42,7 @@ if (isset($_POST['submit'])) {
 		<a href="../index.php">
 				<h2 style="margin-top:20px;font-size:40px; font-weight:700; text-align:center; color:#0063d9">Global Health Care</h2>
 		</a>
-		<h2 style="font-size:25px; font-weight:700; text-align:center;">Forgot Password</h2>
+		<h2 style="font-size:25px; font-weight:700; text-align:center;">Password Recovery</h2>
 			</div>
 			<div class="box-login">
 				<form class="form-login" method="post">

@@ -3,14 +3,14 @@ session_start();
 error_reporting(0);
 include('include/config.php');
 if (strlen($_SESSION['id'] == 0)) {
-	header('location:logout.php');
+	header('location:func-logout.php');
 } else {
 ?>
 	<!DOCTYPE html>
 	<html lang="en">
 
 	<head>
-		<title>View Patients</title>
+		<title>Dashboard</title>
 		<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
@@ -26,85 +26,75 @@ if (strlen($_SESSION['id'] == 0)) {
 		<link rel="stylesheet" href="assets/css/plugins.css">
 		<link rel="stylesheet" href="assets/css/themes/theme-1.css" id="skin_color" />
 	</head>
+
 	<body>
 		<div id="app">
 			<?php include('include/sidebar.php'); ?>
 			<div class="app-content">
 				<?php include('include/header.php'); ?>
+				<!-- end: TOP NAVBAR -->
 				<div class="main-content">
 					<div class="wrap-content container" id="container">
 						<!-- start: PAGE TITLE -->
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle" style="font-weight:600">Search Patients</h1>
+									<h1 class="mainTitle" style="font-weight:600">Dashboard</h1>
 								</div>
 							</div>
 						</section>
+						<!-- end: PAGE TITLE -->
+						<!-- start: BASIC EXAMPLE -->
 						<div class="container-fluid container-fullw bg-white">
 							<div class="row">
-								<div class="col-md-12">
-									<form role="form" method="post" name="search">
-										<div class="form-group">
-											<input placeholder="Search by Name | Mobile Number" type="text" name="searchdata" id="searchdata" class="form-control" value="" required='true'>
+								<div class="col-sm-4">
+									<div class="panel panel-white no-radius text-center">
+										<div class="panel-body">
+											<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-smile-o fa-stack-1x fa-inverse"></i> </span>
+											<h2 class="StepTitle" style="font-weight:600">Profile</h2>
+											<p class="links cl-effect-1">
+												<a href="edit-profile.php">
+													Update My Profile
+												</a>
+											</p>
 										</div>
-										<button type="submit" name="search" id="submit" class="btn btn-o btn-primary">
-											Search
-										</button>
-									</form>
-									<?php
-									if (isset($_POST['search'])) {
-										$sdata = $_POST['searchdata'];
-									?>
-										<h4 align="center">Result Against "<?php echo $sdata; ?>" Keyword </h4>
-										<table class="table table-hover" id="sample-table-1">
-											<thead>
-												<tr>
-													<th class="center">#</th>
-													<th>Patient Name</th>
-													<th>Patient Contact Number</th>
-													<th>Patient Gender </th>
-													<th>Action</th>
-												</tr>
-											</thead>
-											<tbody>
-												<?php
-												$sql = mysqli_query($con, "select * from tblpatient where PatientName like '%$sdata%'|| PatientContno like '%$sdata%'");
-												$num = mysqli_num_rows($sql);
-												if ($num > 0) {
-													$cnt = 1;
-													while ($row = mysqli_fetch_array($sql)) {
-												?>
-														<tr>
-															<td class="center"><?php echo $cnt; ?>.</td>
-															<td class="hidden-xs"><?php echo $row['PatientName']; ?></td>
-															<td><?php echo $row['PatientContno']; ?></td>
-															<td><?php echo $row['PatientGender']; ?></td>
-															</td>
-															<td>
-																<a href="edit-patient.php?editid=<?php echo $row['ID']; ?>"><i class="fa fa-edit"></i></a> || <a href="view-patient.php?viewid=<?php echo $row['ID']; ?>"><i class="fa fa-eye"></i></a>
-															</td>
-														</tr>
-													<?php
-														$cnt = $cnt + 1;
-													}
-												} else { ?>
-													<tr>
-														<td colspan="8"> No record Found Against This Search</td>
-													</tr>
-											<?php }
-											} ?>
-											</tbody>
-										</table>
+									</div>
+								</div>
+								<div class="col-sm-4">
+									<div class="panel panel-white no-radius text-center">
+										<div class="panel-body">
+											<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-paperclip fa-stack-1x fa-inverse"></i> </span>
+											<h2 class="StepTitle" style="font-weight:600">Appointments</h2>
+											<p class="cl-effect-1">
+												<a href="home-appointment_history.php">
+													View My Appointment History
+												</a>
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-4">
+									<div class="panel panel-white no-radius text-center">
+										<div class="panel-body">
+											<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-users fa-stack-1x fa-inverse"></i> </span>
+											<h2 class="StepTitle" style="font-weight:600">Patients</h2>
+											<p class="links cl-effect-1">
+												<a href="manage-patient.php">
+													Manage Patients
+												</a>
+											</p>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
+						<!-- end: SELECT BOXES -->
 					</div>
 				</div>
 			</div>
-		<!-- start: FOOTER -->
-		<?php include('include/footer.php'); ?>
-		<!-- end: FOOTER -->
+			<!-- start: FOOTER -->
+			<?php include('include/footer.php'); ?>
+			<!-- end: FOOTER -->
 		</div>
 		<!-- start: MAIN JAVASCRIPTS -->
 		<script src="vendor/jquery/jquery.min.js"></script>

@@ -5,7 +5,7 @@
 
 			<ul class="main-navigation-menu">
 				<li>
-					<a href="dashboard.php">
+					<a href="home-dashboard.php">
 						<div class="item-content">
 							<div class="item-media">
 								<i class="ti-home"></i>
@@ -19,7 +19,7 @@
 
 
 				<li>
-					<a href="appointment-history.php">
+					<a href="home-appointment_history.php">
 						<div class="item-content">
 							<div class="item-media">
 								<i class="ti-list"></i>
@@ -55,7 +55,7 @@
 					</ul>
 				</li>
 				<li>
-					<a href="search.php">
+					<a href="search-patient.php">
 						<div class="item-content">
 							<div class="item-media">
 								<i class="ti-search"></i>

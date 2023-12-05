@@ -3,19 +3,14 @@ session_start();
 error_reporting(0);
 include('include/config.php');
 if (strlen($_SESSION['id'] == 0)) {
-	header('location:logout.php');
+	header('location:func-logout.php');
 } else {
-
-	if (isset($_GET['cancel'])) {
-		mysqli_query($con, "update appointment set doctorStatus='0' where id ='" . $_GET['id'] . "'");
-		$_SESSION['msg'] = "Appointment Canceled!";
-	}
 ?>
 	<!DOCTYPE html>
 	<html lang="en">
 
 	<head>
-		<title>Appointment History</title>
+		<title>View Patients</title>
 		<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
@@ -31,94 +26,85 @@ if (strlen($_SESSION['id'] == 0)) {
 		<link rel="stylesheet" href="assets/css/plugins.css">
 		<link rel="stylesheet" href="assets/css/themes/theme-1.css" id="skin_color" />
 	</head>
-
 	<body>
 		<div id="app">
 			<?php include('include/sidebar.php'); ?>
 			<div class="app-content">
 				<?php include('include/header.php'); ?>
-				<!-- end: TOP NAVBAR -->
 				<div class="main-content">
 					<div class="wrap-content container" id="container">
 						<!-- start: PAGE TITLE -->
 						<section id="page-title">
 							<div class="row">
 								<div class="col-sm-8">
-									<h1 class="mainTitle" style="font-weight:600">Appointment History</h1>
+									<h1 class="mainTitle" style="font-weight:600">Search Patients</h1>
 								</div>
 							</div>
 						</section>
-						<!-- end: PAGE TITLE -->
-						<!-- start: BASIC EXAMPLE -->
 						<div class="container-fluid container-fullw bg-white">
 							<div class="row">
 								<div class="col-md-12">
-									<p style="color:red;"><?php echo htmlentities($_SESSION['msg']); ?>
-										<?php echo htmlentities($_SESSION['msg'] = ""); ?></p>
-									<table class="table table-hover" id="sample-table-1">
-										<thead>
-											<tr>
-												<th class="center">#</th>
-												<th class="hidden-xs">Patient Name</th>									<th>Specialization</th>
-												<th>Consultancy Fee</th>
-												<th>Appointment Date / Time </th>
-												<th>Appointment Creation Date </th>
-												<th>Current Status</th>
-												<th>Action</th>
-											</tr>
-										</thead>
-										<tbody>
-											<?php
-											$sql = mysqli_query($con, "select users.fullName as fname,appointment.*  from appointment join users on users.id=appointment.userId where appointment.doctorId='" . $_SESSION['id'] . "'");
-											$cnt = 1;
-											while ($row = mysqli_fetch_array($sql)) {
-											?>
+									<form role="form" method="post" name="search">
+										<div class="form-group">
+											<input placeholder="Search by Name | Mobile Number" type="text" name="searchdata" id="searchdata" class="form-control" value="" required='true'>
+										</div>
+										<button type="submit" name="search" id="submit" class="btn btn-o btn-primary">
+											Search
+										</button>
+									</form>
+									<?php
+									if (isset($_POST['search'])) {
+										$sdata = $_POST['searchdata'];
+									?>
+										<h4 align="center">Result Against "<?php echo $sdata; ?>" Keyword </h4>
+										<table class="table table-hover" id="sample-table-1">
+											<thead>
 												<tr>
-													<td class="center"><?php echo $cnt; ?>.</td>
-													<td class="hidden-xs"><?php echo $row['fname']; ?></td>
-													<td><?php echo $row['doctorSpecialization']; ?></td>
-													<td><?php echo $row['consultancyFees']; ?></td>
-													<td><?php echo $row['appointmentDate']; ?> / <?php echo
-																								$row['appointmentTime']; ?>
-													</td>
-													<td><?php echo $row['postingDate']; ?></td>
-													<td>
-														<?php if (($row['userStatus'] == 1) && ($row['doctorStatus'] == 1)) {
-															echo "Active";
-														}
-														if (($row['userStatus'] == 0) && ($row['doctorStatus'] == 1)) {
-															echo "Cancel by Patient";
-														}
-														if (($row['userStatus'] == 1) && ($row['doctorStatus'] == 0)) {
-															echo "Cancel by you";
-														}
-														?></td>
-													<td>
-														<div class="visible-md visible-lg hidden-sm hidden-xs">
-															<?php if (($row['userStatus'] == 1) && ($row['doctorStatus'] == 1)) { ?>
-																<a href="appointment-history.php?id=<?php echo $row['id'] ?>&cancel=update" onClick="return confirm('Are you sure you want to cancel this appointment ?')" class="btn btn-transparent btn-xs tooltips" title="Cancel Appointment" tooltip-placement="top" tooltip="Remove">Cancel</a>
-															<?php } else {
-																echo "Canceled";
-															} ?>
-														</div>
-													</td>
+													<th class="center">#</th>
+													<th>Patient Name</th>
+													<th>Patient Contact Number</th>
+													<th>Patient Gender </th>
+													<th>Action</th>
 												</tr>
-											<?php
-												$cnt = $cnt + 1;
+											</thead>
+											<tbody>
+												<?php
+												$sql = mysqli_query($con, "select * from tblpatient where PatientName like '%$sdata%'|| PatientContno like '%$sdata%'");
+												$num = mysqli_num_rows($sql);
+												if ($num > 0) {
+													$cnt = 1;
+													while ($row = mysqli_fetch_array($sql)) {
+												?>
+														<tr>
+															<td class="center"><?php echo $cnt; ?>.</td>
+															<td class="hidden-xs"><?php echo $row['PatientName']; ?></td>
+															<td><?php echo $row['PatientContno']; ?></td>
+															<td><?php echo $row['PatientGender']; ?></td>
+															</td>
+															<td>
+																<a href="edit-patient.php?editid=<?php echo $row['ID']; ?>"><i class="fa fa-edit"></i></a> || <a href="view-patient.php?viewid=<?php echo $row['ID']; ?>"><i class="fa fa-eye"></i></a>
+															</td>
+														</tr>
+													<?php
+														$cnt = $cnt + 1;
+													}
+												} else { ?>
+													<tr>
+														<td colspan="8"> No record Found Against This Search</td>
+													</tr>
+											<?php }
 											} ?>
-										</tbody>
-									</table>
+											</tbody>
+										</table>
 								</div>
 							</div>
 						</div>
-						<!-- end: BASIC EXAMPLE -->
-						<!-- end: SELECT BOXES -->
 					</div>
 				</div>
 			</div>
-			<!-- start: FOOTER -->
-			<?php include('include/footer.php'); ?>
-			<!-- end: FOOTER -->
+		<!-- start: FOOTER -->
+		<?php include('include/footer.php'); ?>
+		<!-- end: FOOTER -->
 		</div>
 		<!-- start: MAIN JAVASCRIPTS -->
 		<script src="vendor/jquery/jquery.min.js"></script>

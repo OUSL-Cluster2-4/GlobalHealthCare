@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
 		$status = 1;
 		//Code Logs
 		$log = mysqli_query($con, "insert into doctorslog(uid,username,userip,status) values('$uid','$uname','$uip','$status')");
-		header("location:dashboard.php");
+		header("location:home-dashboard.php");
 	} else {
 		$uip = $_SERVER['REMOTE_ADDR'];
 		$status = 0;
