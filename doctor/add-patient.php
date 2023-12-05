@@ -14,7 +14,7 @@ if (strlen($_SESSION['id'] == 0)) {
 		$pataddress = $_POST['pataddress'];
 		$patage = $_POST['patage'];
 		$medhis = $_POST['medhis'];
-		$sql = mysqli_query($con, "insert into tblpatient(Docid,PatientName,PatientContno,PatientEmail,PatientGender,PatientAdd,PatientAge,PatientMedhis) values('$docid','$patname','$patcontact','$patemail','$gender','$pataddress','$patage','$medhis')");
+		$sql = mysqli_query($con, "insert into patients(Docid,PatientName,PatientContno,PatientEmail,PatientGender,PatientAdd,PatientAge,PatientMedhis) values('$docid','$patname','$patcontact','$patemail','$gender','$pataddress','$patage','$medhis')");
 		if ($sql) {
 			echo "<script>alert('Patient Details Added Successfully!');</script>";
 			header('location:add-patient.php');

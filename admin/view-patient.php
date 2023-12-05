@@ -12,7 +12,7 @@ if (strlen($_SESSION['id'] == 0)) {
 		$weight = $_POST['weight'];
 		$temp = $_POST['temp'];
 		$pres = $_POST['pres'];
-		$query .= mysqli_query($con, "insert   tblmedicalhistory(PatientID,BloodPressure,BloodSugar,Weight,Temperature,MedicalPres)value('$vid','$bp','$bs','$weight','$temp','$pres')");
+		$query .= mysqli_query($con, "insert   medicalhistory(PatientID,BloodPressure,BloodSugar,Weight,Temperature,MedicalPres)value('$vid','$bp','$bs','$weight','$temp','$pres')");
 		if ($query) {
 			echo '<script>alert("Medicle History Added!")</script>';
 			echo "<script>window.location.href ='manage-patient.php'</script>";
@@ -63,7 +63,7 @@ if (strlen($_SESSION['id'] == 0)) {
 									<h5 class="over-title margin-bottom-15"><span class="text-bold">Patient Details</span></h5>
 									<?php
 									$vid = $_GET['viewid'];
-									$ret = mysqli_query($con, "select * from tblpatient where ID='$vid'");
+									$ret = mysqli_query($con, "select * from patients where ID='$vid'");
 									$cnt = 1;
 									while ($row = mysqli_fetch_array($ret)) {
 									?>
@@ -95,7 +95,7 @@ if (strlen($_SESSION['id'] == 0)) {
 										<?php } ?>
 										</table>
 										<?php
-										$ret = mysqli_query($con, "select * from tblmedicalhistory  where PatientID='$vid'");
+										$ret = mysqli_query($con, "select * from medicalhistory  where PatientID='$vid'");
 										?>
 										<table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
 											<tr align="center">

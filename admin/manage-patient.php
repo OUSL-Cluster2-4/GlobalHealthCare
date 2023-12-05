@@ -58,7 +58,7 @@ if (strlen($_SESSION['id'] == 0)) {
 										</thead>
 										<tbody>
 											<?php
-											$sql = mysqli_query($con, "select * from tblpatient");
+											$sql = mysqli_query($con, "select * from patients");
 											$cnt = 1;
 											while ($row = mysqli_fetch_array($sql)) {
 											?>
