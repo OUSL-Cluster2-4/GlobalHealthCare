@@ -38,7 +38,7 @@ CREATE TABLE `admin` (
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id`, `username`, `password`, `updationDate`) VALUES
+INSERT INTO `admin` (`id`, `username`, `password`) VALUES
 (1, 'admin@gmail.com', 'Test@12345', '30-10-2022 11:42:05 AM');
 
 -- --------------------------------------------------------

@@ -5,7 +5,7 @@ if (isset($_POST['submit'])) {
     $email = $_POST['emailid'];
     $mobileno = $_POST['mobileno'];
     $dscrption = $_POST['description'];
-    $query = mysqli_query($con, "insert into tblcontactus(fullname,email,contactno,message) value('$name','$email','$mobileno','$dscrption')");
+    $query = mysqli_query($con, "insert into tblcontactus(fullname,email,contactNo,message) value('$name','$email','$mobileno','$dscrption')");
     echo "<script>alert('Your information succesfully submitted');</script>";
     echo "<script>window.location.href ='index.php'</script>";
 } ?>
@@ -162,11 +162,11 @@ if (isset($_POST['submit'])) {
         <div class="container">
             <div class="inner-title" style="background-color: #ffffff;">
                 <h2 style="font-size:40px; font-weight:700">About Our Hospital</h2>
-                <p><?php
-                    $ret = mysqli_query($con, "select * from tblpage where PageType='aboutus' ");
-                    while ($row = mysqli_fetch_array($ret)) {
-                    ?>
-                <p><?php echo $row['PageDescription']; ?>.</p><?php } ?></p>
+                <p>Welcome to our Hospital Management platform, where efficiency meets 
+                    compassion in healthcare. Our user-friendly web pages provide a seamless 
+                    experience for patients, offering easy registration, appointment scheduling, 
+                    and secure access to medical records. With streamlined staff management, 
+                    inventory tracking, and billing processes, we aim to optimize every aspect of healthcare administration.</p>
             </div>
         </div>
     </section>
@@ -252,16 +252,11 @@ if (isset($_POST['submit'])) {
                 <div class="col-md-6 col-sm-12 map-img">
                     <h2>Contact Us</h2>
                     <address class="md-margin-bottom-40">
-                        <?php
-                        $ret = mysqli_query($con, "select * from tblpage where PageType='contactus' ");
-                        while ($row = mysqli_fetch_array($ret)) {
-                        ?>
-                            <?php echo $row['PageDescription']; ?> <br>
-                            Phone: <?php echo $row['MobileNumber']; ?> <br>
-                            Email: <a href="mailto:<?php echo $row['Email']; ?>" class=""><?php echo $row['Email']; ?></a><br>
-                            Opening Hours: <?php echo $row['OpenningTime']; ?>
+                    Jaffna Genaral Hospital,Jaffna. <br>
+                            Phone: 0771234567 <br>
+                            Email: genaralhospital@gmail.com<br>
+                            Opening Hours: 24 Hours
                     </address>
-                <?php } ?>
                 </div>
             </div>
         </div>

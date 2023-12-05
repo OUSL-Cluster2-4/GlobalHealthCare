@@ -69,14 +69,14 @@ if (strlen($_SESSION['id'] == 0)) {
 										</thead>
 										<tbody>
 											<?php
-											$sql = mysqli_query($con, "select doctors.doctorName as docname,appointment.*  from appointment join doctors on doctors.id=appointment.doctorId where appointment.userId='" . $_SESSION['id'] . "'");
+											$sql = mysqli_query($con, "select doctors.docName as docname,appointment.*  from appointment join doctors on doctors.id=appointment.doctorId where appointment.userId='" . $_SESSION['id'] . "'");
 											$cnt = 1;
 											while ($row = mysqli_fetch_array($sql)) {
 											?>
 												<tr>
 													<td class="center"><?php echo $cnt; ?>.</td>
 													<td class="hidden-xs"><?php echo $row['docname']; ?></td>
-													<td><?php echo $row['doctorSpecialization']; ?></td>
+													<td><?php echo $row['dSpecial']; ?></td>
 													<td><?php echo $row['consultancyFees']; ?></td>
 													<td><?php echo $row['appointmentDate']; ?> / <?php echo
 																									$row['appointmentTime']; ?>

@@ -4,12 +4,12 @@ error_reporting(0);
 include("include/config.php");
 //Checking Details for reset password
 if (isset($_POST['submit'])) {
-	$contactno = $_POST['contactno'];
+	$contactNo = $_POST['contactNo'];
 	$email = $_POST['email'];
-	$query = mysqli_query($con, "select id from  doctors where contactno='$contactno' and docEmail='$email'");
+	$query = mysqli_query($con, "select id from  doctors where contactNo='$contactNo' and docEmail='$email'");
 	$row = mysqli_num_rows($query);
 	if ($row > 0) {
-		$_SESSION['cnumber'] = $contactno;
+		$_SESSION['cnumber'] = $contactNo;
 		$_SESSION['email'] = $email;
 		header('location:reset-password.php');
 	} else {
@@ -55,7 +55,7 @@ if (isset($_POST['submit'])) {
 						</p>
 						<div class="form-group form-actions">
 							<span class="input-icon">
-								<input type="text" class="form-control" name="contactno" placeholder="Registred Contact Number">
+								<input type="text" class="form-control" name="contactNo" placeholder="Registred Contact Number">
 								<i class="fa fa-lock"></i>
 							</span>
 						</div>

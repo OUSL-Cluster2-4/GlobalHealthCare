@@ -107,7 +107,7 @@ if (strlen($_SESSION['id'] == 0)) {
 											<h2 class="StepTitle" style="font-weight:600">Patients</h2>
 											<p class="links cl-effect-1">
 												<a href="manage-patient.php">
-													<?php $result = mysqli_query($con, "SELECT * FROM tblpatient ");
+													<?php $result = mysqli_query($con, "SELECT * FROM patients ");
 													$num_rows = mysqli_num_rows($result); {
 													?>
 														Total Patients : <?php echo htmlentities($num_rows);
@@ -124,7 +124,7 @@ if (strlen($_SESSION['id'] == 0)) {
 											<h2 class="StepTitle" style="font-weight:600">Specialization</h2>
 											<p class="links cl-effect-1">
 												<a href="home-doctor-specilization.php">
-													<?php $result = mysqli_query($con, "SELECT * FROM doctorspecilization ");
+													<?php $result = mysqli_query($con, "SELECT * FROM specialtype ");
 													$num_rows3 = mysqli_num_rows($result); {
 													?>
 														Total Specialization : <?php echo htmlentities($num_rows3);
@@ -141,7 +141,7 @@ if (strlen($_SESSION['id'] == 0)) {
 											<h2 class="StepTitle" style="font-weight:600">Medical History</h2>
 											<p class="links cl-effect-1">
 												<a href="#">
-													<?php $result = mysqli_query($con, "SELECT * FROM tblmedicalhistory ");
+													<?php $result = mysqli_query($con, "SELECT * FROM medicalhistory ");
 													$num_rows4 = mysqli_num_rows($result); {
 													?>
 														Total Medical History : <?php echo htmlentities($num_rows4);

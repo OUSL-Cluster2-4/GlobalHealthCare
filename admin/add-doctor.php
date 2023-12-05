@@ -10,10 +10,10 @@ if (strlen($_SESSION['id'] == 0)) {
 		$docname = $_POST['docname'];
 		$docaddress = $_POST['address'];
 		$docfees = $_POST['docfees'];
-		$doccontactno = $_POST['doccontact'];
+		$doccontactNo = $_POST['doccontact'];
 		$docemail = $_POST['docemail'];
 		$password = md5($_POST['npass']);
-		$sql = mysqli_query($con, "insert into doctors(specilization,doctorName,address,docFees,contactno,docEmail,password) values('$docspecialization','$docname','$docaddress','$docfees','$doccontactno','$docemail','$password')");
+		$sql = mysqli_query($con, "insert into doctors(specilization,docName,address,docFees,contactNo,docEmail,password) values('$docspecialization','$docname','$docaddress','$docfees','$doccontactNo','$docemail','$password')");
 		if ($sql) {
 			echo "<script>alert('Doctor Details Added Successfully!');</script>";
 			echo "<script>window.location.href ='manage-doctors.php'</script>";
@@ -98,7 +98,7 @@ if (strlen($_SESSION['id'] == 0)) {
 															</label>
 															<select name="Doctorspecialization" class="form-control" required="true">
 																<option value="">Select Specialization</option>
-																<?php $ret = mysqli_query($con, "select * from doctorspecilization");
+																<?php $ret = mysqli_query($con, "select * from specialtype");
 																while ($row = mysqli_fetch_array($ret)) {
 																?>
 																	<option value="<?php echo htmlentities($row['specilization']); ?>">
@@ -108,7 +108,7 @@ if (strlen($_SESSION['id'] == 0)) {
 															</select>
 														</div>
 														<div class="form-group">
-															<label for="doctorname">
+															<label for="docName">
 																Doctor Name
 															</label>
 															<input type="text" name="docname" class="form-control" placeholder="Enter Doctor Name" required="true">

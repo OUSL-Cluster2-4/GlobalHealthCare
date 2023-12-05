@@ -11,9 +11,9 @@ if (strlen($_SESSION['id'] == 0)) {
 		$docname = $_POST['docname'];
 		$docaddress = $_POST['address'];
 		$docfees = $_POST['docfees'];
-		$doccontactno = $_POST['doccontact'];
+		$doccontactNo = $_POST['doccontact'];
 		$docemail = $_POST['docemail'];
-		$sql = mysqli_query($con, "Update doctors set specilization='$docspecialization',doctorName='$docname',address='$docaddress',docFees='$docfees',contactno='$doccontactno',docEmail='$docemail' where id='$did'");
+		$sql = mysqli_query($con, "Update doctors set specilization='$docspecialization',docName='$docname',address='$docaddress',docFees='$docfees',contactNo='$doccontactNo',docEmail='$docemail' where id='$did'");
 		if ($sql) {
 			$msg = "Doctor Details Updated Successfully!";
 		}
@@ -71,7 +71,7 @@ if (strlen($_SESSION['id'] == 0)) {
 													<?php $sql = mysqli_query($con, "select * from doctors where id='$did'");
 													while ($data = mysqli_fetch_array($sql)) {
 													?>
-														<h4 style="font-weight:600;color:#0063d9;"><?php echo htmlentities($data['doctorName']); ?>'s Profile</h4>
+														<h4 style="font-weight:600;color:#0063d9;"><?php echo htmlentities($data['docName']); ?>'s Profile</h4>
 														<form role="form" name="adddoc" method="post" onSubmit="return valid();">
 															<div class="form-group">
 																<label for="DoctorSpecialization">
@@ -80,7 +80,7 @@ if (strlen($_SESSION['id'] == 0)) {
 																<select name="Doctorspecialization" class="form-control" required="required">
 																	<option value="<?php echo htmlentities($data['specilization']); ?>">
 																		<?php echo htmlentities($data['specilization']); ?></option>
-																	<?php $ret = mysqli_query($con, "select * from doctorspecilization");
+																	<?php $ret = mysqli_query($con, "select * from specialtype");
 																	while ($row = mysqli_fetch_array($ret)) {
 																	?>
 																		<option value="<?php echo htmlentities($row['specilization']); ?>">
@@ -90,10 +90,10 @@ if (strlen($_SESSION['id'] == 0)) {
 																</select>
 															</div>
 															<div class="form-group">
-																<label for="doctorname">
+																<label for="docName">
 																	Doctor Name
 																</label>
-																<input type="text" name="docname" class="form-control" value="<?php echo htmlentities($data['doctorName']); ?>">
+																<input type="text" name="docname" class="form-control" value="<?php echo htmlentities($data['docName']); ?>">
 															</div>
 															<div class="form-group">
 																<label for="address">
@@ -111,7 +111,7 @@ if (strlen($_SESSION['id'] == 0)) {
 																<label for="fess">
 																	Doctor Contact No
 																</label>
-																<input type="text" name="doccontact" class="form-control" required="required" value="<?php echo htmlentities($data['contactno']); ?>">
+																<input type="text" name="doccontact" class="form-control" required="required" value="<?php echo htmlentities($data['contactNo']); ?>">
 															</div>
 															<div class="form-group">
 																<label for="fess">

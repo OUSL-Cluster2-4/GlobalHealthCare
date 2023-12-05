@@ -6,8 +6,8 @@ if (strlen($_SESSION['id'] == 0)) {
 	header('location:func-logout.php');
 } else {
 	if (isset($_POST['submit'])) {
-		$doctorspecilization = $_POST['doctorspecilization'];
-		$sql = mysqli_query($con, "insert into doctorSpecilization(specilization) values('$doctorspecilization')");
+		$specialtype = $_POST['specialtype'];
+		$sql = mysqli_query($con, "insert into doctorSpecilization(specilization) values('$specialtype')");
 		$_SESSION['msg'] = "Doctor Specialization Added Successfully!";
 	}
 	//Code Deletion
@@ -67,7 +67,7 @@ if (strlen($_SESSION['id'] == 0)) {
 														<?php echo htmlentities($_SESSION['msg'] = ""); ?></p>
 													<form role="form" name="dcotorspcl" method="post">
 														<div class="form-group">
-															<input type="text" name="doctorspecilization" class="form-control" placeholder="Enter Doctor Specialization">
+															<input type="text" name="specialtype" class="form-control" placeholder="Enter Doctor Specialization">
 														</div>
 														<button type="submit" name="submit" class="btn btn-o btn-primary">
 															Add
