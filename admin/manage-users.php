@@ -62,7 +62,6 @@ if (strlen($_SESSION['id'] == 0)) {
 												<th class="center">#</th>
 												<th>Name</th>
 												<th class="hidden-xs">Address</th>
-												<th>City</th>
 												<th>Gender </th>
 												<th>Email </th>
 												<th>Action</th>
@@ -78,7 +77,6 @@ if (strlen($_SESSION['id'] == 0)) {
 													<td class="center"><?php echo $cnt; ?>.</td>
 													<td class="hidden-xs"><?php echo $row['fullName']; ?></td>
 													<td><?php echo $row['address']; ?></td>
-													<td><?php echo $row['city']; ?>
 													</td>
 													<td><?php echo $row['gender']; ?></td>
 													<td><?php echo $row['email']; ?></td>

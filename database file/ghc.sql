@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2023 at 04:34 PM
+-- Generation Time: Dec 05, 2023 at 07:11 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -59,6 +59,14 @@ CREATE TABLE `appointment` (
   `doctorStatus` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
+--
+-- Dumping data for table `appointment`
+--
+
+INSERT INTO `appointment` (`id`, `doctorSpecialization`, `doctorId`, `userId`, `consultancyFees`, `appointmentDate`, `appointmentTime`, `postingDate`, `userStatus`, `doctorStatus`) VALUES
+(8, 'Pediatrics', 1, 1, 1000, '2023-12-28', '11:30 PM', '2023-12-05 17:49:58', 0, 1),
+(9, 'Pediatrics', 1, 3, 1000, '2023-12-28', '11:30 PM', '2023-12-05 17:53:13', 1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -82,7 +90,10 @@ CREATE TABLE `doctors` (
 --
 
 INSERT INTO `doctors` (`id`, `specilization`, `doctorName`, `address`, `docFees`, `contactno`, `docEmail`, `password`, `creationDate`) VALUES
-(1, 'Pediatrics', 'Dr. Kasun', 'Kandy', '1000', 771234567, 'd_kasun@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2022-11-04 01:06:41');
+(1, 'Pediatrics', 'Dr. Kasun', 'Kandy', '1000', 771234567, 'd_kasun@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2022-11-04 01:06:41'),
+(4, 'Radiology', 'Dr. Lahiru', 'Colombo', '2000', 771234567, 'd_lahiru@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2023-12-05 17:58:57'),
+(5, 'Dental Care', 'Dr. Latheef', 'Kalmunai', '2100', 771234567, 'd_latheef@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2023-12-05 18:00:11'),
+(6, 'Neurologists', 'Dr. Abinaya', 'Jaffna', '2100', 771234567, 'd_abinaya@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2023-12-05 18:03:06');
 
 -- --------------------------------------------------------
 
@@ -128,7 +139,8 @@ CREATE TABLE `medicalhistory` (
 --
 
 INSERT INTO `medicalhistory` (`ID`, `PatientID`, `BloodPressure`, `BloodSugar`, `Weight`, `Temperature`, `MedicalPres`, `CreationDate`) VALUES
-(3, 4, '12', '123', '12', '12', 'A Plus', '2023-12-05 15:28:06');
+(3, 4, '12', '123', '12', '12', 'A Plus', '2023-12-05 15:28:06'),
+(4, 5, '123', '123', '12', '123', 'Good', '2023-12-05 17:56:35');
 
 -- --------------------------------------------------------
 
@@ -154,7 +166,8 @@ CREATE TABLE `patients` (
 --
 
 INSERT INTO `patients` (`ID`, `Docid`, `PatientName`, `PatientContno`, `PatientEmail`, `PatientGender`, `PatientAdd`, `PatientAge`, `PatientMedhis`, `CreationDate`) VALUES
-(4, 1, 'Peter', 752202444, 'u_peter@gmail.com', 'Male', 'Ampara', 25, 'Low Sugar', '2023-12-05 15:27:42');
+(4, 1, 'Peter', 752202444, 'u_peter@gmail.com', 'Male', 'Ampara', 25, 'Low Sugar', '2023-12-05 15:27:42'),
+(5, 1, 'David', 771234567, 'u_david@gmail.com', 'Male', 'Kandy', 24, 'Low Sugar', '2023-12-05 17:54:35');
 
 -- --------------------------------------------------------
 
@@ -166,7 +179,6 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `fullName` varchar(255) DEFAULT NULL,
   `address` longtext DEFAULT NULL,
-  `city` varchar(255) DEFAULT NULL,
   `gender` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
@@ -177,8 +189,9 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `fullName`, `address`, `city`, `gender`, `email`, `password`, `regDate`) VALUES
-(1, 'Peter Parker', 'Ampara', 'Ampara', 'male', 'u_peter@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2022-11-06 12:13:56');
+INSERT INTO `users` (`id`, `fullName`, `address`, `gender`, `email`, `password`, `regDate`) VALUES
+(1, 'Peter Parker', 'Ampara', 'male', 'u_peter@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2022-11-06 12:13:56'),
+(3, 'David Malan', 'Ampara', 'Male', 'u_david@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2023-12-05 17:52:31');
 
 --
 -- Indexes for dumped tables
@@ -241,13 +254,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `appointment`
 --
 ALTER TABLE `appointment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `doctors`
 --
 ALTER TABLE `doctors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `doctorspecilization`
@@ -259,19 +272,19 @@ ALTER TABLE `doctorspecilization`
 -- AUTO_INCREMENT for table `medicalhistory`
 --
 ALTER TABLE `medicalhistory`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `patients`
 --
 ALTER TABLE `patients`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

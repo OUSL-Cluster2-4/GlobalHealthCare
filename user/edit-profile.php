@@ -7,9 +7,8 @@ check_login();
 if (isset($_POST['submit'])) {
 	$fname = $_POST['fname'];
 	$address = $_POST['address'];
-	$city = $_POST['city'];
 	$gender = $_POST['gender'];
-	$sql = mysqli_query($con, "Update users set fullName='$fname',address='$address',city='$city',gender='$gender' where id='" . $_SESSION['id'] . "'");
+	$sql = mysqli_query($con, "Update users set fullName='$fname',address='$address',gender='$gender' where id='" . $_SESSION['id'] . "'");
 	if ($sql) {
 		$msg = "Your Profile Updated Successfully!";
 	}
@@ -81,12 +80,6 @@ if (isset($_POST['submit'])) {
 																Address
 															</label>
 															<textarea name="address" class="form-control"><?php echo htmlentities($data['address']); ?></textarea>
-														</div>
-														<div class="form-group">
-															<label for="city">
-																City
-															</label>
-															<input type="text" name="city" class="form-control" required="required" value="<?php echo htmlentities($data['city']); ?>">
 														</div>
 														<div class="form-group">
 															<label for="gender">
