@@ -1,5 +1,5 @@
 <?php
-include_once('ghc/include/config.php');
+include_once('user/include/config.php');
 if (isset($_POST['submit'])) {
     $name = $_POST['fullname'];
     $email = $_POST['emailid'];
@@ -43,7 +43,7 @@ if (isset($_POST['submit'])) {
                         </ul>
                     </div>
                     <div class="col-sm-2 d-none d-lg-block appoint">
-                        <a class="btn btn-success" href="ghc/user-login.php">Book Now</a>
+                        <a class="btn btn-success" href="user/index.php">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -78,7 +78,7 @@ if (isset($_POST['submit'])) {
                             <img src="assets/images/admin.jpg" alt="">
                             <div class="blog-single-det">
                                 <h6>Admin Login</h6>
-                                <a href="ghc/admin" target="_blank">
+                                <a href="admin">
                                     <button class="btn btn-success btn-sm">Click Here</button>
                                 </a>
                             </div>
@@ -89,7 +89,7 @@ if (isset($_POST['submit'])) {
                             <img src="assets/images/doctor.jpg" alt="">
                             <div class="blog-single-det">
                                 <h6>Doctor login</h6>
-                                <a href="ghc/doctor" target="_blank">
+                                <a href="doctor">
                                     <button class="btn btn-success btn-sm">Click Here</button>
                                 </a>
                             </div>
@@ -100,7 +100,7 @@ if (isset($_POST['submit'])) {
                             <img src="assets/images/patient.jpg" alt="">
                             <div class="blog-single-det">
                                 <h6>User Login</h6>
-                                <a href="ghc/user-login.php" target="_blank">
+                                <a href="user">
                                     <button class="btn btn-success btn-sm">Click Here</button>
                                 </a>
                             </div>
