@@ -8,6 +8,7 @@ if (strlen($_SESSION['id'] == 0)) {
 ?>
 	<!DOCTYPE html>
 	<html lang="en">
+
 	<head>
 		<title>Admin | View Patients</title>
 		<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
@@ -25,6 +26,7 @@ if (strlen($_SESSION['id'] == 0)) {
 		<link rel="stylesheet" href="assets/css/plugins.css">
 		<link rel="stylesheet" href="assets/css/themes/theme-1.css" id="skin_color" />
 	</head>
+
 	<body>
 		<div id="app">
 			<?php include('include/sidebar.php'); ?>
@@ -45,7 +47,7 @@ if (strlen($_SESSION['id'] == 0)) {
 								<div class="col-md-12">
 									<form role="form" method="post" name="search">
 										<div class="form-group">
-											<input placeholder="Search by Name | Mobile Number" name="searchdata" id="searchdata" class="form-control" value="" required='true'>
+											<input placeholder="Search by Name | Mobile Number" type="text" name="searchdata" id="searchdata" class="form-control" value="" required='true'>
 										</div>
 										<button type="submit" name="search" id="submit" class="btn btn-o btn-primary">
 											Search
@@ -55,7 +57,7 @@ if (strlen($_SESSION['id'] == 0)) {
 									if (isset($_POST['search'])) {
 										$sdata = $_POST['searchdata'];
 									?>
-										<h4 align="center">Result against "<?php echo $sdata; ?>" keyword </h4>
+										<h4 align="center">Result Against "<?php echo $sdata; ?>" Keyword </h4>
 										<table class="table table-hover" id="sample-table-1">
 											<thead>
 												<tr>
@@ -136,5 +138,6 @@ if (strlen($_SESSION['id'] == 0)) {
 		<!-- end: JavaScript Event Handlers for this page -->
 		<!-- end: CLIP-TWO JAVASCRIPTS -->
 	</body>
+
 	</html>
 <?php } ?>

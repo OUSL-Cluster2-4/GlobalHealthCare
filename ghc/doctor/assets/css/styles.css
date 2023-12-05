@@ -110,23 +110,27 @@ button {
 
 a {
   color: #007AFF;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: sans-serif;
 }
 a:hover, a:focus, a:active {
   color: #004999;
 }
 
 h1, h2 {
-  font-family: "Raleway", sans-serif;
+  font-family: sans-serif;
 }
 
 h3, h4, h5 {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: sans-serif;
 }
 
 h1, h2, h3, h4, h5 {
   font-weight: 300;
   margin-top: 0;
-  color: #5b5b60;
+  font-family: system-ui;
+  color: #0a0a0a;
 }
 .text-bold h1, h1.text-bold, h1 .text-bold, .text-bold h2, h2.text-bold, h2 .text-bold, .text-bold h3, h3.text-bold, h3 .text-bold, .text-bold h4, h4.text-bold, h4 .text-bold, .text-bold h5, h5.text-bold, h5 .text-bold {
   font-weight: 600;
@@ -329,8 +333,8 @@ h5.over-title {
   margin-right: -15px;
   padding-left: 30px;
   padding-right: 30px;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border-bottom: 1px solid #eee;
 }
 @media (max-width: 768px) {
@@ -1066,9 +1070,10 @@ h5.over-title {
 }
 #sidebar > div nav > ul li a {
   border: none;
-  font-weight: 300;
+  font-weight: 500;
   margin: 0;
   position: relative;
+  font-family: system-ui;
   text-decoration: none;
 }
 #sidebar > div nav > ul li a i[class*="ti-"] {
@@ -1542,6 +1547,7 @@ ul.sub-menu li ul.sub-menu li ul.sub-menu li a {
 #app > footer .footer-inner {
   padding: 0 20px;
   line-height: 50px;
+  font-family: system-ui;
 }
 @media (min-width: 992px) {
   #app > footer {
@@ -3840,7 +3846,7 @@ a.text-light:hover {
   background-color: #ffffff;
   position: relative;
   color: #5b5b60;
-  border: 1px solid rgba(0, 0, 0, 0.07);
+  border: 0px solid rgba(0, 0, 0, 0.07);
 }
 
 .panel-dark, .partition-dark {
@@ -4768,8 +4774,8 @@ select[multiple="multiple"]:focus option {
 }
 
 label {
-  font-weight: normal;
-  color: #858585;
+  color: #191919;
+  font-weight: 600;
 }
 
 span.input-icon, span.input-help {
@@ -5742,6 +5748,8 @@ input[type="radio"], input[type="checkbox"] {
 /*  Buttons
 /* ---------------------------------------------------------------------- */
 .btn {
+  font-family: system-ui;
+  font-size: 14px;
   transition: all 0.3s ease 0s !important;
   background-image: none !important;
   box-shadow: none !important;
@@ -5772,7 +5780,7 @@ input[type="radio"], input[type="checkbox"] {
 }
 
 .btn-o {
-  background: none !important;
+  background: #007aff !important;
 }
 
 .btn-default {
@@ -5836,12 +5844,13 @@ input[type="radio"], input[type="checkbox"] {
 }
 .btn-primary.btn-o {
   border: 1px solid #007AFF;
-  color: #007AFF;
+  color: #FFFFFF;
+  background-color: #66afff;
 }
 .btn-primary.btn-o:hover {
-  color: #3395ff;
-  border-color: #3395ff;
-  background: none !important;
+  border: 1px solid #007AFF;
+  background-color: #007AFF;
+  color: #FFFFFF;
 }
 .btn-primary.btn-o:active, .btn-primary.btn-o.active, .btn-primary.btn-o.active:focus, .btn-primary.btn-o:active:focus, .btn-primary.btn-o:active:hover {
   background-color: #eaeaec !important;
@@ -11205,7 +11214,7 @@ td.small-width {
 /* ---------------------------------------------------------------------- */
 #page-title {
   border-bottom: 1px solid #eee;
-  padding: 50px 0;
+  padding: 20px 0;
   position: relative;
   margin-left: -15px;
   margin-right: -15px;
@@ -11220,7 +11229,7 @@ td.small-width {
   margin: 0 15px;
 }
 #page-title h1 {
-  color: #333;
+  color: #0063d9;
   font-size: 28px;
   font-weight: 300;
   letter-spacing: 1px;

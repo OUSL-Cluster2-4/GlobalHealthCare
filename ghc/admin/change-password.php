@@ -49,15 +49,15 @@ if (strlen($_SESSION['id'] == 0)) {
 		<script type="text/javascript">
 			function valid() {
 				if (document.chngpwd.cpass.value == "") {
-					alert("Current Password Filed is Empty !!");
+					alert("Current Password Cannot Be is Empty !!");
 					document.chngpwd.cpass.focus();
 					return false;
 				} else if (document.chngpwd.npass.value == "") {
-					alert("New Password Filed is Empty !!");
+					alert("New Password Cannot Be is Empty !!");
 					document.chngpwd.npass.focus();
 					return false;
 				} else if (document.chngpwd.cfpass.value == "") {
-					alert("Confirm Password Filed is Empty !!");
+					alert("Confirm Password Cannot Be is Empty !!");
 					document.chngpwd.cfpass.focus();
 					return false;
 				} else if (document.chngpwd.npass.value != document.chngpwd.cfpass.value) {
@@ -126,16 +126,10 @@ if (strlen($_SESSION['id'] == 0)) {
 										</div>
 									</div>
 								</div>
-								<div class="col-lg-12 col-md-12">
-									<div class="panel panel-white">
-									</div>
-								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<!-- end: BASIC EXAMPLE -->
-				<!-- end: SELECT BOXES -->
 			</div>
 		<!-- start: FOOTER -->
 		<?php include('include/footer.php'); ?>

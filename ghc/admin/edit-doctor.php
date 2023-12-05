@@ -97,7 +97,7 @@ if (strlen($_SESSION['id'] == 0)) {
 															</div>
 															<div class="form-group">
 																<label for="address">
-																	Doctor Clinic Address
+																	Doctor Address
 																</label>
 																<textarea name="address" class="form-control"><?php echo htmlentities($data['address']); ?></textarea>
 															</div>

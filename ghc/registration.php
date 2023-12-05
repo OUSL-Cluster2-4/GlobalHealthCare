@@ -75,11 +75,11 @@ if (isset($_POST['submit'])) {
 								Gender
 							</label>
 							<div class="clip-radio radio-primary">
-								<input type="radio" id="rg-male" name="gender" value="male">
+								<input type="radio" id="rg-male" name="gender" value="Male">
 								<label for="rg-male">
 									Male
 								</label>
-								<input type="radio" id="rg-female" name="gender" value="female">
+								<input type="radio" id="rg-female" name="gender" value="Female">
 								<label for="rg-female">
 									Female
 								</label>
