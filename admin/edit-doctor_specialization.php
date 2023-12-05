@@ -7,7 +7,7 @@ if (strlen($_SESSION['id'] == 0)) {
 } else {
 	$id = intval($_GET['id']); // get value
 	if (isset($_POST['submit'])) {
-		$docspecialization = $_POST['specialtype'];
+		$docspecialization = $_POST['doctorspecilization'];
 		$sql = mysqli_query($con, "update  doctorSpecilization set specilization='$docspecialization' where id='$id'");
 		$_SESSION['msg'] = "Doctor Specialization updated successfully!";
 	}
@@ -67,7 +67,7 @@ if (strlen($_SESSION['id'] == 0)) {
 															$id = intval($_GET['id']);
 															$sql = mysqli_query($con, "select * from doctorSpecilization where id='$id'");
 															while ($row = mysqli_fetch_array($sql)) {
-															?> <input type="text" name="specialtype" class="form-control" value="<?php echo $row['specilization']; ?>">
+															?> <input type="text" name="doctorspecilization" class="form-control" value="<?php echo $row['specilization']; ?>">
 															<?php } ?>
 														</div>
 														<button type="submit" name="submit" class="btn btn-o btn-primary">

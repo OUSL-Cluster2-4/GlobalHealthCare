@@ -74,9 +74,9 @@ if (strlen($_SESSION['id'] == 0)) {
 												<tr>
 													<td class="center"><?php echo $cnt; ?>.</td>
 													<td class="hidden-xs"><?php echo $row['specilization']; ?></td>
-													<td><?php echo $row['docName']; ?></td></dt>
+													<td><?php echo $row['doctorName']; ?></td></dt>
 													<td><?php echo $row['address']; ?></td>
-													<td><?php echo $row['contactNo']; ?></td>
+													<td><?php echo $row['contactno']; ?></td>
 													<td>
 														<div class="visible-md visible-lg hidden-sm hidden-xs">
 															<a href="edit-doctor.php?id=<?php echo $row['id']; ?>" class="btn btn-transparent btn-xs" tooltip-placement="top" tooltip="Edit"><i class="fa fa-pencil"></i></a>

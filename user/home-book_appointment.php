@@ -5,7 +5,7 @@ include('include/config.php');
 include('include/checklogin.php');
 check_login();
 if (isset($_POST['submit'])) {
-	$specilization = $_POST['dSpecial'];
+	$specilization = $_POST['Doctorspecialization'];
 	$doctorid = $_POST['doctor'];
 	$userid = $_SESSION['id'];
 	$fees = $_POST['fees'];
@@ -13,7 +13,7 @@ if (isset($_POST['submit'])) {
 	$time = $_POST['apptime'];
 	$userstatus = 1;
 	$docstatus = 1;
-	$query = mysqli_query($con, "insert into appointment(dSpecial,doctorId,userId,consultancyFees,appointmentDate,appointmentTime,userStatus,doctorStatus) values('$specilization','$doctorid','$userid','$fees','$appdate','$time','$userstatus','$docstatus')");
+	$query = mysqli_query($con, "insert into appointment(doctorSpecialization,doctorId,userId,consultancyFees,appointmentDate,appointmentTime,userStatus,doctorStatus) values('$specilization','$doctorid','$userid','$fees','$appdate','$time','$userstatus','$docstatus')");
 	if ($query) {
 		echo "<script>alert('Your Appointment Successfully Booked!');</script>";
 	}
@@ -93,12 +93,12 @@ if (isset($_POST['submit'])) {
 													<?php echo htmlentities($_SESSION['msg1'] = ""); ?></p>
 												<form role="form" name="book" method="post">
 													<div class="form-group">
-														<label for="dSpecial">
+														<label for="DoctorSpecialization">
 															Doctor Specialization
 														</label>
-														<select name="dSpecial" class="form-control" onChange="getdoctor(this.value);" required="required">
+														<select name="Doctorspecialization" class="form-control" onChange="getdoctor(this.value);" required="required">
 															<option value="">Select Specialization</option>
-															<?php $ret = mysqli_query($con, "select * from specialtype");
+															<?php $ret = mysqli_query($con, "select * from doctorspecilization");
 															while ($row = mysqli_fetch_array($ret)) {
 															?>
 																<option value="<?php echo htmlentities($row['specilization']); ?>">

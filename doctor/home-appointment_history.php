@@ -76,7 +76,7 @@ if (strlen($_SESSION['id'] == 0)) {
 												<tr>
 													<td class="center"><?php echo $cnt; ?>.</td>
 													<td class="hidden-xs"><?php echo $row['fname']; ?></td>
-													<td><?php echo $row['dSpecial']; ?></td>
+													<td><?php echo $row['doctorSpecialization']; ?></td>
 													<td><?php echo $row['consultancyFees']; ?></td>
 													<td><?php echo $row['appointmentDate']; ?> / <?php echo
 																								$row['appointmentTime']; ?>

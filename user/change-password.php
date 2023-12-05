@@ -10,7 +10,7 @@ if (isset($_POST['submit'])) {
 	$sql = mysqli_query($con, "SELECT password FROM  users where password='" . md5($_POST['cpass']) . "' && id='" . $_SESSION['id'] . "'");
 	$num = mysqli_fetch_array($sql);
 	if ($num > 0) {
-		$con = mysqli_query($con, "update users set password='" . md5($_POST['npass']) . "' where id='" . $_SESSION['id'] . "'");
+		$con = mysqli_query($con, "update users set password='" . md5($_POST['npass']) . "', updationDate='$currentTime' where id='" . $_SESSION['id'] . "'");
 		$_SESSION['msg1'] = "Password Changed Successfully!";
 	} else {
 		$_SESSION['msg1'] = "Old Password Not Matching!";
@@ -92,7 +92,7 @@ if (isset($_POST['submit'])) {
 									<div class="col-lg-8 col-md-12">
 										<div class="panel panel-white">
 											<div class="panel-body">
-												<p style="color:green;"><?php echo htmlentities($_SESSION['msg1']); ?>
+												<p style="color:red;"><?php echo htmlentities($_SESSION['msg1']); ?>
 													<?php echo htmlentities($_SESSION['msg1'] = ""); ?></p>
 												<form role="form" name="chngpwd" method="post" onSubmit="return valid();">
 													<div class="form-group">

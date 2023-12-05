@@ -15,7 +15,7 @@ if (strlen($_SESSION['id'] == 0)) {
 		$pataddress = $_POST['pataddress'];
 		$patage = $_POST['patage'];
 		$medhis = $_POST['medhis'];
-		$sql = mysqli_query($con, "update patients set PatientName='$patname',PatientContno='$patcontact',PatientEmail='$patemail',PatientGender='$gender',PatientAdd='$pataddress',PatientAge='$patage',PatientMedhis='$medhis' where ID='$eid'");
+		$sql = mysqli_query($con, "update tblpatient set PatientName='$patname',PatientContno='$patcontact',PatientEmail='$patemail',PatientGender='$gender',PatientAdd='$pataddress',PatientAge='$patage',PatientMedhis='$medhis' where ID='$eid'");
 		if ($sql) {
 			echo "<script>alert('Patient info updated Successfully');</script>";
 			header('location:manage-patient.php');
@@ -71,7 +71,7 @@ if (strlen($_SESSION['id'] == 0)) {
 													<form role="form" name="" method="post">
 														<?php
 														$eid = $_GET['editid'];
-														$ret = mysqli_query($con, "select * from patients where ID='$eid'");
+														$ret = mysqli_query($con, "select * from tblpatient where ID='$eid'");
 														$cnt = 1;
 														while ($row = mysqli_fetch_array($ret)) {
 

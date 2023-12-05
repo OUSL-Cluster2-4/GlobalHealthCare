@@ -69,7 +69,7 @@ if (strlen($_SESSION['id'] == 0)) {
 											</thead>
 											<tbody>
 												<?php
-												$sql = mysqli_query($con, "select * from patients where PatientName like '%$sdata%'|| PatientContno like '%$sdata%'");
+												$sql = mysqli_query($con, "select * from tblpatient where PatientName like '%$sdata%'|| PatientContno like '%$sdata%'");
 												$num = mysqli_num_rows($sql);
 												if ($num > 0) {
 													$cnt = 1;

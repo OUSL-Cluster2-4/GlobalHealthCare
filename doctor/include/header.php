@@ -28,9 +28,9 @@
 				<a style="color:#0063d9;font-weight:bold;" href class="dropdown-toggle" data-toggle="dropdown">
 					<img src="assets/images/images.jpg"> <span class="username">
 
-						<?php $query = mysqli_query($con, "select docName from doctors where id='" . $_SESSION['id'] . "'");
+						<?php $query = mysqli_query($con, "select doctorName from doctors where id='" . $_SESSION['id'] . "'");
 						while ($row = mysqli_fetch_array($query)) {
-							echo $row['docName'];
+							echo $row['doctorName'];
 						}
 						?> <i class="ti-angle-down"></i></i></span>
 				</a>
