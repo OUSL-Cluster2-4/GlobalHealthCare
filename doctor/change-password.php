@@ -14,7 +14,7 @@ if (strlen($_SESSION['id'] == 0)) {
 		$num = mysqli_fetch_array($sql);
 		if ($num > 0) {
 			$npass = md5($_POST['npass']);
-			$con = mysqli_query($con, "update doctors set password='$npass', updationDate='$currentTime' where id='$did'");
+			$con = mysqli_query($con, "update doctors set password='$npass' where id='$did'");
 			$_SESSION['msg1'] = "Password Changed Successfully!";
 		} else {
 			$_SESSION['msg1'] = "Old Password Not Matching!";
@@ -96,7 +96,7 @@ if (strlen($_SESSION['id'] == 0)) {
 										<div class="col-lg-8 col-md-12">
 											<div class="panel panel-white">
 												<div class="panel-body">
-													<p style="color:red;"><?php echo htmlentities($_SESSION['msg1']); ?>
+													<p style="color:green;"><?php echo htmlentities($_SESSION['msg1']); ?>
 														<?php echo htmlentities($_SESSION['msg1'] = ""); ?></p>
 													<form role="form" name="chngpwd" method="post" onSubmit="return valid();">
 														<div class="form-group">
