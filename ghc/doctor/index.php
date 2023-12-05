@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
 		$uip = $_SERVER['REMOTE_ADDR'];
 		$status = 0;
 		mysqli_query($con, "insert into doctorslog(username,userip,status) values('$uname','$uip','$status')");
-		$_SESSION['errmsg'] = "Invalid username or password";
+		$_SESSION['errmsg'] = "Invalid Username or Password";
 		header("location:index.php");
 	}
 }
@@ -46,8 +46,10 @@ if (isset($_POST['submit'])) {
 	<div class="row">
 		<div class="main-login col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
 			<div class="logo margin-top-30">
+			<a href="../index.php">
 				<h2 style="margin-top:20px;font-size:40px; font-weight:700; text-align:center; color:#0063d9">Global Health Care</h2>
 				<h2 style="font-size:25px; font-weight:700; text-align:center;">Doctor Login</h2>
+			</a>
 			</div>
 			<div class="box-login">
 				<form class="form-login" method="post">

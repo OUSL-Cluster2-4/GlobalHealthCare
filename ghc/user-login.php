@@ -23,13 +23,14 @@ if (isset($_POST['submit'])) {
 		$uip = $_SERVER['REMOTE_ADDR'];
 		$status = 0;
 		mysqli_query($con, "insert into userlog(username,userip,status) values('$puname','$uip','$status')");
-		$_SESSION['errmsg'] = "Invalid username or password";
+		$_SESSION['errmsg'] = "Invalid Username or Password";
 		header("location:user-login.php");
 	}
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<title>User Login</title>
 	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
@@ -43,6 +44,7 @@ if (isset($_POST['submit'])) {
 	<link rel="stylesheet" href="assets/css/plugins.css">
 	<link rel="stylesheet" href="assets/css/themes/theme-1.css" id="skin_color" />
 </head>
+
 <body class="login">
 	<div class="row">
 		<div class="main-login col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
@@ -109,4 +111,5 @@ if (isset($_POST['submit'])) {
 	</script>
 </body>
 <!-- end: BODY -->
+
 </html>

@@ -25,7 +25,7 @@
 								<i class="ti-list"></i>
 							</div>
 							<div class="item-inner">
-								<span style="color:#0063d9" class="title"> Appointment History </span>
+								<span style="color:#0063d9" class="title">Appointment History </span>
 							</div>
 						</div>
 					</a>
